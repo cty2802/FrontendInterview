@@ -1,22 +1,22 @@
-import express from "express";
-import path from "path";
+import express from 'express';
+import path from 'path';
+import { getResponse } from './app/helper/service.js';
 
 const app = express();
 const port = 3000;
 
-// add a possibility to use files from the "public" directory
 app.use(express.static('public'));
 
-// render the index.html file by the "/" route
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/index.html'));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-// return a list of articles from the db.json
 app.get('/items/', (req, res) => {
+  const page = +req.query.page || 1;
 
+  res.send(getResponse(page));
 });
 
 app.listen(port, () => {
-    console.log(`Test project is here: http://localhost:${port}`);
+  console.log(`Test project is here: http://localhost:${port}`);
 });
