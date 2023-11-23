@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Autoline test project</title>
-    <link rel="stylesheet" href="index.css"/>
-</head>
-<body>
-<main class="app">
-    <header>
-        <img src="img/logo.png" alt="Autoline" class="logotype">
-    </header>
-    <section class="articles">
-        Статті...
-    </section>
-    <section class="pagination">
-        <button class="pagination-button pagination-prev">< Попередня</button>
-        <button class="pagination-button pagination-next">Наступна ></button>
-    </section>
-</main>
-<script type="module" src="index.js"></script>
-</body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <img src="img/logo.png" alt="Autoline" class="logotype" />
+      </header>
+      <section class="articles">Статті...</section>
+      <section class="pagination">
+        <button
+          class="pagination-button pagination-prev"
+          onclick="handleChangePrev()"
+        >
+          Попередня
+        </button>
+        <button
+          class="pagination-button pagination-next"
+          onclick="handleChangeNext()"
+        >
+          Наступна
+        </button>
+      </section>
+    </main>
+    <script type="module" src="index.js"></script>
+  </body>
 </html>

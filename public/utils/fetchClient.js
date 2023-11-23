@@ -1,7 +1,7 @@
 import { BASE_URL } from "./constants.js";
 
-export const getItems = async () => {
-  return await fetch(BASE_URL + '/items/')
+export const getItems = async (page) => {
+  return await fetch(BASE_URL + `/items/?page=${page}`)
   .then (response => {
     if (!response.ok) {
       throw new Error();
@@ -9,4 +9,4 @@ export const getItems = async () => {
 
     return response.json();
   })
-}
+};

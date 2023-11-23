@@ -11,8 +11,7 @@ function getAllItems() {
 function getItemsOnPage(items, page) {
   return items.slice(
     page * QUANTITY_PER_PAGE - QUANTITY_PER_PAGE,
-    QUANTITY_PER_PAGE * page
-  );
+    QUANTITY_PER_PAGE * page);
 }
 
 export function getResponse(page) {
