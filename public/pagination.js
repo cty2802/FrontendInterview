@@ -11,12 +11,26 @@ export const pageNumberFromUrl = () => {
 export async function getPageItems(pageIndexAdd = 0) {
   const newPage = pageNumberFromUrl() + pageIndexAdd;
 
-
   const items = await getItems(newPage);
   const lastPage = Math.trunc(items.totalItems / QUANTITY_PER_PAGE);
+  const buttonPrev = document.getElementsByClassName("pagination-next")[0];
+  const buttonNext = document.getElementsByClassName("pagination-prev")[0];
+  
+ if (newPage === lastPage) {
+  buttonPrev.disabled = true;
+ } else {
+  buttonPrev.disabled = false;
+ }
 
-  navigateToPage(newPage);
-  return items;
+ if (newPage === 1) {
+  buttonNext.disabled = true;  
+} else {
+  buttonNext.disabled = false; 
+}
+
+navigateToPage(newPage);
+  
+  return items;  
 }
 
 function navigateToPage(page) {

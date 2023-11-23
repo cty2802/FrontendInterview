@@ -94,3 +94,7 @@ header {
     border-radius: 5px;
     padding: 7px 10px;
 }
+
+.pagination-button:disabled {
+  background: rgb(156, 188, 223);
+}

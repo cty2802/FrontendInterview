@@ -20,7 +20,6 @@ async function drawItems(items) {
 }
 
 async function handleChangePrev() {
-  // const nextPage = document.getElementsByClassName("pagination-next")[0];
   drawItems(await getPageItems(-1));
 }
 
